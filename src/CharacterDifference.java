@@ -49,6 +49,6 @@ public class CharacterDifference {
     }
 
     public static void main(String[] args) {
-        System.out.println(Difference("aabc", "eibc"));
+        System.out.println(Difference("aabc", "eic"));
     }
 }
