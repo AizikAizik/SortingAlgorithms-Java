@@ -18,11 +18,11 @@ public class ValidateIP {
             }
         }
 
-        for(int i = 0; i < newIp.length; i++){
-            int current = Integer.parseInt(newIp[i]);
-            if(current < 0 || current > 255){
+        for (String s : newIp) {
+            int current = Integer.parseInt(s);
+            if (current < 0 || current > 255) {
                 return false;
-            }else if(newIp[i].length() > 3){
+            } else if (s.length() > 3) {
                 return false;
             }
         }
