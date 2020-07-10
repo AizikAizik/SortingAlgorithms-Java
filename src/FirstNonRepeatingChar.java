@@ -28,6 +28,6 @@ public class FirstNonRepeatingChar {
     }
 
     public static void main(String[] args) {
-        System.out.println(FindFirst("daadcceeff"));
+        System.out.println(FindFirst("dbaadcceeff"));
     }
 }
