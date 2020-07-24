@@ -62,7 +62,10 @@ public class MergeSort{
         int[] right_half = new int[arr_length - middleIndex];// do the same for right array but size of array length minus mid index
 
         // populate left array with values from original array up to the  value before the mid index value
-        IntStream.rangeClosed(0, middleIndex - 1).forEach(i -> left_half[i] = array[i]);
+        int bound = middleIndex - 1;
+        for (int i1 = 0; i1 <= bound; i1++) {
+            left_half[i1] = array[i1];
+        }
 
         // populate right array with values from original array from mid index value to the end of the array
         IntStream.rangeClosed(middleIndex, arr_length - 1).forEach(i -> right_half[i - middleIndex] = array[i]);

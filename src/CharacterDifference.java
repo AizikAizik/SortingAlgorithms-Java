@@ -12,6 +12,7 @@ public class CharacterDifference {
         Set<Character> letters = new HashSet<>(); // create a set data structure for the first string
         Set<Character> letters2 = new HashSet<>(); // create a set data structure for the second string
 
+        double start = System.currentTimeMillis();
         for (int i = 0; i < lowercase1.length(); i++) {
             letters.add(lowercase1.charAt(i)); // populate the first set with s1 values
         }
@@ -44,11 +45,12 @@ public class CharacterDifference {
                 list.add(key);
             }
         });
-
+        double elapsed = System.currentTimeMillis() - start;
+        System.out.println("elapsed time for algorithm took: "+ elapsed + " Milisecond(s)");
         return list; // return the list
     }
 
     public static void main(String[] args) {
-        System.out.println(Difference("aabc", "eic"));
+        System.out.println(Difference("aabcdefgh", "eicklizan"));
     }
 }
