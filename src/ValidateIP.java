@@ -10,11 +10,7 @@ public class ValidateIP {
         if(newIp.length != 4){
             return false;
         }
-//        for (String number: newIp) {
-//            if(! number.matches(regex)){
-//                return false;
-//            }
-//        }
+
         double start = System.currentTimeMillis();
         for (String s : newIp) {
             try{

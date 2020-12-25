@@ -2,7 +2,6 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class NumberOfAlphabets {
-
     //Time complexity of these Algorithm is Big O(n) at worse case
     private static HashMap NumOfAlphabets(String s){
         String lower = s.toLowerCase(); // convert thw whole string to lowercase
