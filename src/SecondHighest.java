@@ -18,14 +18,12 @@ public class SecondHighest {
             list.add(Math.min(arr[0], arr[1]));
             return (int) list.get(0);
         }
-
         // first find the highest value in the list
         for (int i : arr) {
             if(i >= max){
                 max = i;
             }
         }
-
         //find the second highest value in the array
         for (int num : arr) {
             int diff = max - num;
