@@ -6,7 +6,7 @@ public class MultiplicationTable {
 
     private static ArrayList<ArrayList<Integer>> mainTable = new ArrayList<>();
 
-    public static ArrayList PrintMultiplicationTable(int max_limit, int height){
+    private static ArrayList PrintMultiplicationTable(int max_limit, int height){
         ArrayList<Integer> table = new ArrayList<>();
         int multiplier = 1;
 
@@ -22,7 +22,7 @@ public class MultiplicationTable {
         return mainTable;
     }
 
-    public static int[][] PrintMultiplicationTable2(int max_limit, int height){
+    private static int[][] PrintMultiplicationTable2(int max_limit, int height){
         int[][] table = new int[height][max_limit];
         int multiplier = 1;
 
@@ -38,13 +38,17 @@ public class MultiplicationTable {
     }
 
     public static void main(String[] args) {
-        int[][] myArray = PrintMultiplicationTable2(4,10);
+        int[][] myArray = PrintMultiplicationTable2(12,10);
 //        for(int[] arr : myArray)
 //            System.out.println(Arrays.toString(arr));
 
         for (int i = 0; i < myArray.length; i++){
             for (int j = 0; j < myArray[i].length; j++){
-                System.out.print(myArray[i][j] + "\t\t\t\t\t");
+                if(myArray[i][j] < 10){
+                    System.out.print(myArray[i][j] + "\t\t\t");
+                }else{
+                    System.out.print(myArray[i][j] + "\t\t");
+                }
             }
             System.out.println();
         }
