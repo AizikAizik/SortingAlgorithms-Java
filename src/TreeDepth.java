@@ -36,8 +36,11 @@ public class TreeDepth {
     public static void main(String[] args) {
         List<Node> list = new LinkedList<>();
 
+        List<Node> list2 = new LinkedList<>();
+        list2.add(new Node(7));
+
         list.add(new Node(4));
-        list.add(new Node(5));
+        list.add(new Node(5, list2));
 
         Node node = new Node(1, list);
 
