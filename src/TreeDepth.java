@@ -19,29 +19,29 @@ public class TreeDepth {
 
             for (int i = 0; i < size; i++){
                 Node cuurentNode = queue.poll();
-                for (Node child: cuurentNode.children) {
-                    queue.offer(child);
+
+                if( cuurentNode != null && cuurentNode.children != null){
+                    for (Node child: cuurentNode.children) {
+                        queue.offer(child);
+                    }
                 }
+
             }
             depth++;
         }
+
         return depth;
     }
 
     public static void main(String[] args) {
-//        List<Node> list = new LinkedList<>();
-//        list.add(1);
-//        list.add(null);
-//        list.add(3);
-//        list.add(2);
-//        list.add(4);
-//        list.add(null);
-//        list.add(5);
-//        list.add(6);
-//
-//        Node node = new Node(1, list);
-//
-//        System.out.println(MaxDepth(list));
+        List<Node> list = new LinkedList<>();
+
+        list.add(new Node(4));
+        list.add(new Node(5));
+
+        Node node = new Node(1, list);
+
+        System.out.println(MaxDepth(node));
     }
 }
 

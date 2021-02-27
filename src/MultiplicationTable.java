@@ -38,16 +38,29 @@ public class MultiplicationTable {
     }
 
     public static void main(String[] args) {
-        int[][] myArray = PrintMultiplicationTable2(12,10);
+        int[][] myArray = PrintMultiplicationTable2(12,12);
 //        for(int[] arr : myArray)
 //            System.out.println(Arrays.toString(arr));
 
         for (int i = 0; i < myArray.length; i++){
             for (int j = 0; j < myArray[i].length; j++){
                 if(myArray[i][j] < 10){
-                    System.out.print(myArray[i][j] + "\t\t\t");
-                }else{
-                    System.out.print(myArray[i][j] + "\t\t");
+                    System.out.print(myArray[i][j] + "\t\t\t\t\t\t|");
+                }else if(i == myArray.length - 1 && myArray[i][j] >= 10 && myArray[i][j] < 100){
+                    if(j == 0){
+                        System.out.print(myArray[i][j] + "\t\t\t\t\t|");
+                    }else{
+                        System.out.print(myArray[i][j] + "\t\t\t\t\t\t|");
+                    }
+                }
+                else if(myArray[i][j] >= 10 && myArray[i][j] < 100){
+                    if(i < 10 )
+                        System.out.print(myArray[i][j] + "\t\t\t\t\t\t|");
+                    else
+                        System.out.print(myArray[i][j] + "\t\t\t\t\t|");
+                }
+                else{
+                    System.out.print(myArray[i][j] + "\t\t\t\t\t|");
                 }
             }
             System.out.println();
