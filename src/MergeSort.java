@@ -4,8 +4,6 @@ import java.util.stream.IntStream;
 
 public class MergeSort{
 
-    private static String unsortedArray = ""; // initial un-sorted array
-
     // Main Method
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
@@ -14,36 +12,20 @@ public class MergeSort{
         int capacity = input.nextInt();
         int[] userNumbers = new int[capacity];
         System.out.println("Enter " + capacity + "digits below and press Enter ");
-        // prompt the user for 10 numbers
+        // prompt the user for (capacity) numbers
         for (int i = 0; i < capacity; i++) {
-            System.out.println("Enter Number here....");
+            System.out.println("Enter Number....");
             int num = input.nextInt();
             userNumbers[i] = num;
         }
-        // print out each number inside the array
-        for (int i = 0; i < userNumbers.length; i++) {
-            if (userNumbers.length == 1) {
-                unsortedArray += " {" + userNumbers[i] + " }";
-            } else {
-                if (i == userNumbers.length - 1) {
-                    unsortedArray += " ," + userNumbers[i] + " }";
-                } else if (i == 0) {
-                    unsortedArray += "{" + userNumbers[0];
-                } else {
-                    unsortedArray += ", " + userNumbers[i];
-                }
-            }
 
-        }
         // Unsorted Array
         System.out.println();
-        System.out.println("The initial array Entered by user is :");
-        System.out.println(unsortedArray);
+        System.out.printf("Unsorted Array %s", Arrays.toString(userNumbers));
 
         // Sorted Array
         System.out.println();
-        System.out.println("The sorted array is :");
-        System.out.println(Arrays.toString(MergeSortAlgorithm(userNumbers)));
+        System.out.printf("Sorted Array with Merge sort %s", Arrays.toString(MergeSortAlgorithm(userNumbers)));
 
     }
 
@@ -63,9 +45,7 @@ public class MergeSort{
 
         // populate left array with values from original array up to the  value before the mid index value
         int bound = middleIndex - 1;
-        for (int i1 = 0; i1 <= bound; i1++) {
-            left_half[i1] = array[i1];
-        }
+        System.arraycopy(array, 0, left_half, 0, bound + 1);
 
         // populate right array with values from original array from mid index value to the end of the array
         IntStream.rangeClosed(middleIndex, arr_length - 1).forEach(i -> right_half[i - middleIndex] = array[i]);

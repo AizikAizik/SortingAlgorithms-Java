@@ -1,9 +1,7 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class BobbleSort {
-
-    private static String unsortedArray = "";
-    private static String sortedArray = "";
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
@@ -14,52 +12,22 @@ public class BobbleSort {
         System.out.println("Enter " + capacity + "digits below and press Enter ");
         // prompt the user for 10 numbers
         for (int i = 0; i < capacity; i++) {
-            System.out.println("Enter Number here....");
+            System.out.println("Enter Number Below....");
             int num = input.nextInt();
             userNumbers[i] = num;
         }
 
-        // print out each number inside the array
-        for (int i = 0; i < userNumbers.length; i++) {
-            if (userNumbers.length == 1) {
-                unsortedArray += " {" + userNumbers[i] + " }";
-            } else {
-                if (i == userNumbers.length - 1) {
-                    unsortedArray += " ," + userNumbers[i] + " }";
-                } else if (i == 0) {
-                    unsortedArray += "{" + userNumbers[0];
-                } else {
-                    unsortedArray += ", " + userNumbers[i];
-                }
-            }
-
-        }
         // Unsorted Array
         System.out.println();
-        System.out.println("The initial array Entered by user is :");
-        System.out.println(unsortedArray);
+        System.out.printf("Unsorted Array %s", Arrays.toString(userNumbers));
 
-        // Sorted Array
         System.out.println();
-        System.out.println("The sorted array is :");
+
+        //sort the Array
         BobbleAlgorithm(userNumbers);
 
         // print out the sorted array values
-        for (int i = 0; i < userNumbers.length; i++) {
-            if (userNumbers.length == 1) {
-                sortedArray += " {" + userNumbers[i] + " }";
-            } else {
-                if (i == userNumbers.length - 1) {
-                    sortedArray += " ," + userNumbers[i] + " }";
-                } else if (i == 0) {
-                    sortedArray += "{" + userNumbers[0];
-                } else {
-                    sortedArray += ", " + userNumbers[i];
-                }
-            }
-
-        }
-        System.out.println(sortedArray);
+        System.out.printf("Sorted Array with Booble sort %s", Arrays.toString(userNumbers));
     }
 
     // method for sorting Array using Bobble Sort
