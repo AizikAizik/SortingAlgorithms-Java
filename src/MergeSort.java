@@ -27,6 +27,8 @@ public class MergeSort{
         System.out.println();
         System.out.printf("Sorted Array with Merge sort %s", Arrays.toString(MergeSortAlgorithm(userNumbers)));
 
+        input.close();
+
     }
 
     // Implementation of merge sort algorithm
