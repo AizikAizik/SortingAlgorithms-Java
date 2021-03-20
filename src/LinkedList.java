@@ -58,7 +58,7 @@ public class LinkedList {
         }
     }
 
-    // delete head of the LinkedList and return deleted value
+    // delete head of the LinkedList
     public void DeleteFromBeginning(){
         if(head == null){
             System.err.println("LinkedList is already empty");
@@ -79,6 +79,32 @@ public class LinkedList {
 
     }
 
+    // delete tail of the LinkedList
+    public void DeleteFromEnd(){
+        if(head == null){
+            System.err.println("LinkedList is already empty");
+            return;
+        }
+
+        if(head.next == null){
+            head = null;
+            tail = null;
+            linkedListArray.remove(0);
+        }else {
+            Node temp2 = head;
+            while(temp2.next != null){
+                temp2 = temp2.next;
+                if(temp2.next.next == null)
+                    break;
+            }
+            tail = temp2;
+            tail.next = null;
+            linkedListArray.remove(linkedListArray.size() - 1);
+            System.out.println("Node deleted successfully from the end");
+        }
+
+    }
+
     public static void main(String[] args) {
 
         LinkedList l = new LinkedList();
@@ -91,8 +117,13 @@ public class LinkedList {
         System.out.println(l.toString());
 
         System.out.println("==================================");
-        System.out.println("LinkedList after deletion");
+        System.out.println("LinkedList after deletion from front");
         l.DeleteFromBeginning();
+        System.out.println(l.toString());
+
+        System.out.println("==================================");
+        System.out.println("LinkedList after deletion from end");
+        l.DeleteFromEnd();
         System.out.println(l.toString());
 
     }
